@@ -68,6 +68,7 @@ namespace Repositorio
             // Retorna a ista de filmes.
             return filmes;
         }
+
         public Filme ObterPeloId(int id)
         {
             SqlConnection conexao = new SqlConnection();
@@ -126,12 +127,11 @@ VALUES (@NOME, @CATEGORIA, @CURTIU, @DURACAO, @AVALIACAO, @TEM_SEQUENCIA)";
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = "DELETE FROM filmes WHERRE id = @ID";
+            comando.CommandText = "DELETE FROM filmes WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", id);
             comando.ExecuteNonQuery();
             conexao.Close();
         }
-        //Desenvolvimento da rotina para apagar um filme pelo id.
         public void Atualizar(Filme filme)
         {
             SqlConnection conexao = new SqlConnection();
@@ -162,8 +162,4 @@ WHERE id = @ID";
 
         }
     }
-
-
-
-
 }
