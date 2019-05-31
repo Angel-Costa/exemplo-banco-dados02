@@ -120,7 +120,23 @@ VALUES (@NOME, @CATEGORIA, @CURTIU, @DURACAO, @AVALIACAO, @TEM_SEQUENCIA)";
             conexao.Close();
 
         }
+
+        public void Aoagar(int id)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = CadeiaConexao;
+            conexao.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = "DELETE FROM filmes WHERRE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+            comando.ExecuteNonQuery();
+            conexao.Close();
+        }
+        //Desenvolvimento da rotina para apagar um filme pelo id.
     }
+
 
 
 
