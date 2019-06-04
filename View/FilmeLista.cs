@@ -30,7 +30,7 @@ namespace View
         {
             FilmeRepositorio repositorio = new FilmeRepositorio();
             List<Filme> filmes = repositorio.ObterTodos();
-
+            dataGridView1.Rows.Clear();
             for (int i = 0; i < filmes.Count; i++)
             {
                 Filme filme = filmes[i];
@@ -61,6 +61,17 @@ namespace View
         private void FilmeLista_Activated(object sender, EventArgs e)
         {
             AtualizarTabela();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+            FilmeRepositorio repositorio = new FilmeRepositorio();
+            Filme filme = repositorio.ObterPeloId(id);
+
+            FilmeEditar filmeEditar = new FilmeEditar(filme);
+            filmeEditar.ShowDialog();
         }
     }
 }

@@ -29,3 +29,4 @@ C:\Users\64716\Documents\exemplo-banco-dados02\View\obj\Debug\View.exe
 C:\Users\64716\Documents\exemplo-banco-dados02\View\obj\Debug\View.pdb
 C:\Users\64716\Documents\exemplo-banco-dados02\View\obj\Debug\View.FilmeCadastro.resources
 C:\Users\64716\Documents\exemplo-banco-dados02\View\obj\Debug\View.FilmeLista.resources
+C:\Users\64716\Documents\exemplo-banco-dados02\View\obj\Debug\View.FilmeEditar.resources
